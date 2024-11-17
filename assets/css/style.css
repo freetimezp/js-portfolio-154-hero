@@ -10,3 +10,346 @@ a {
     text-decoration: none;
 }
 
+:root {
+    --dark-color: #004880;
+    --light-color: #497db6;
+    --white-color: #fff;
+    --black-color: #111;
+    --red-color: #b22c26;
+    --dark-red: #791f1d;
+    --glass-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    min-height: 100vh;
+    min-width: 400px;
+    max-width: 100vw;
+    background-image: url(../images/bg.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, rgba(0,0,0,.1) , rgba(255,255,255,0.001));    
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 80px;
+    padding: 0 5%;
+    font-size: 18px;
+}
+
+.logo {
+    color: var(--white-color);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-right: auto;
+}
+
+.logo span {
+    color: var(--dark-color);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav li a {
+    position: relative;
+    color: var(--white-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-left: 40px;
+    transition: color 0.4s ease;
+}
+
+.nav li a:hover {
+    color: #9ebbf5;
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    min-height: calc(100vh - 80px);
+    color: var(--white-color);
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+}
+
+.hero-content h3 {
+    font-size: 1.1rem;
+    margin-top: -200px;
+    color: #234865;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, .2);
+}
+
+.hero-content h1 {
+    color: #004880;
+    font-size: 10rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    position: relative;
+}
+
+.image-overlay img {
+    position: absolute;
+    top: 100%;
+    right: -80%;
+    transform: translate(-50%, -20%);
+    max-width: 500px;
+    height: auto;
+}
+
+.hero-content p {
+    font-size: 2rem;
+    line-height: 1.5;
+    margin: 20px auto 80px;
+    width: 60%;
+    text-align: center;
+    color: var(--black-color);
+}
+
+.hero-content button {
+    padding: 15px 25px;
+    font-size: 1.5rem;
+    color: var(--white-color);
+    background-color: var(--dark-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .9s ease;
+}
+
+.hero-content button:hover {
+    background-color: #0a2f57;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.offer-section {
+    padding: 100px 0;
+    text-align: center;
+
+}
+
+.offer-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: var(--glass-color);
+    border-radius: 15px;
+    backdrop-filter: blur(32px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, .1);
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    transition: transform .3s, box-shadow .3s;
+}
+
+.card img {
+    width: 80px;
+    margin-bottom: 15px;
+}
+
+.card h6 {
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    color: #5f5d5d;
+    margin-bottom: 15px;
+}
+
+.card button {
+    background-color: var(--dark-color);
+    border: none;
+    padding: 10px 20px;
+    color: var(--white-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .9s ease;
+}
+
+.card button:hover {
+    background-color: #0a2f57;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .2);
+}
+
+#toggle {
+    font-size: 1.3rem;
+    margin-left: 80px;
+    cursor: pointer;
+    display: none;
+}
+
+#close {
+    font-size: 1.3rem;
+    color: var(--dark-color);
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    z-index: 20;
+    display: none;
+}
+
+@media (max-width: 1318px) {
+    header {
+        padding: 0 5%;
+    }
+    .nav li a {
+        font-size: 0.9rem;
+        margin-left: 20px;
+    }
+    .hero-content h1 {
+        font-size: 10rem;
+    }
+    .image-overlay img {
+        max-width: 400px;
+        top: 100%;
+        right: -90%;
+    }
+    .hero-content p {
+        width: 70%;
+        font-size: 0.9rem;
+    }
+    .hero-content button {
+        font-size: 0.9rem;
+        padding: 12px 20px;
+    }
+    .offer-section h2 {
+        font-size: 2rem;
+    }
+    .cards {
+        gap: 15px;
+    }
+    .card {
+        width: 250px;
+    }
+}
+
+@media (max-width: 768px)  {
+    #toggle {
+        display: block;
+    }
+    .nav {
+        flex-direction: column;
+        row-gap: 20px;
+        position: absolute;
+        left: 0;
+        top: -120%;
+        width: 100%;
+        padding-top: 80px;
+        background-color: hsla(353, 98%, 90%, 0.4);
+        backdrop-filter: blur(16px);
+        height: calc(100vh - 80px);
+        z-index: 10;
+        transition: top .4s ease;
+    }
+    .nav.active {
+        top: 0;
+    }
+    .hero-section {
+        padding: 40px 15px;
+    }
+    .hero-content h1 {
+        font-size: 5rem;
+    }
+
+    .image-overlay img {
+        max-width: 300px;
+        margin-top: 150px;
+        right: -50%;
+    }
+    .hero-content p {
+        width: 80%;
+        font-size: 0.8rem;
+    }
+    .hero-content button {
+        font-size: 0.8rem;
+        padding: 10px 15px;
+    }
+    .offer-section h2 {
+        font-size: 1.8rem;
+    }
+    .card {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    .image-overlay img {
+        max-width: 250px;
+        margin-top: 200px;
+        right: -35%;
+    }
+    .hero-content p {
+        width: 90%;
+        font-size: 0.7rem;
+    }
+    .hero-content button {
+        font-size: 0.7rem;
+        padding: 8px 12px;
+    }
+    .offer-section {
+        padding: 50px 10px;
+    }
+    .offer-section h2 {
+        font-size: 1.5rem;
+    }
+    .card img {
+        width: 60px;
+    }
+    .card {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
